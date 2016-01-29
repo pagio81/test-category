@@ -13,6 +13,9 @@
         <module>module-one</module>
         <module>module-two</module>
     </modules>
+	<scm>
+<url>https://github.com/pagio81/test-category</url> <connection>scm:git:https://github.com/pagio81/test-category.git</connection> 
+</scm>
 
 
 
