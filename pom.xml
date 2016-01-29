@@ -5,7 +5,7 @@
     <groupId>au.com.westernpower</groupId>
     <artifactId>test-category</artifactId>
     <packaging>pom</packaging>
-    <version>1.0</version>
+    <version>1.0-SNAPSHOT</version>
     <modules>
         <module>module-test</module>
         <module>module-one</module>
