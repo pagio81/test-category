@@ -4,19 +4,16 @@
     <groupId>au.com.westernpower</groupId>
     <artifactId>test-category</artifactId>
     <packaging>pom</packaging>
-    <version>1.3</version>
+    <version>1.4</version>
     <modules>
         <module>module-test</module>
         <module>module-one</module>
         <module>module-two</module>
     </modules>
-	<scm>
-<connection>scm:git:git@github.com:pagio81/test-category.git</connection> 
-<developerConnection>scm:git:git@github.com:pagio81/test-category.git</developerConnection>
-</scm>
-<properties>
-   <project.scm.id>git</project.scm.id>
-</properties>
+    <scm>
+	<connection>scm:git:git@github.com:pagio81/test-category.git</connection> 
+	<developerConnection>scm:git:git@github.com:pagio81/test-category.git</developerConnection>
+    </scm>
 
 
 
