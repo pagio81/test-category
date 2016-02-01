@@ -4,3 +4,6 @@
 */*.iml
 target/*
 */target/*
+*.*releaseBackup
+**/*.*releaseBackup
+release.properties
