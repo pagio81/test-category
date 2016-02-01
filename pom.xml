@@ -4,7 +4,7 @@
     <groupId>au.com.westernpower</groupId>
     <artifactId>test-category</artifactId>
     <packaging>pom</packaging>
-    <version>1.4</version>
+    <version>1.5-SNAPSHOT</version>
     <modules>
         <module>module-test</module>
         <module>module-one</module>
