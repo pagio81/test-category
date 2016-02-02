@@ -10,6 +10,7 @@ public class ModuleTwoUnitTest {
     @Test
     public void test1(){
         System.out.println("Running a unit test / 1");
+        System.out.println("my new feature");
     }
 
     @Test
