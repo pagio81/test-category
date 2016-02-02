@@ -15,6 +15,8 @@ public class ModuleTwoOtherUnitTest {
     @Test
     public void test2(){
         System.out.println("Running a unit test / 2");
+        System.out.println("other bug fix!");
+
     }
 
 
