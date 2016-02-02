@@ -15,7 +15,16 @@
 	<developerConnection>scm:git:git@github.com:pagio81/test-category.git</developerConnection>
     </scm>
 
-
+   <distributionManagement>
+        <repository>
+            <id>central</id>
+            <url>http://localhost:8888/artifactory/libs-release</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <url>http://localhost:8888/artifactory/libs-snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
 
     <dependencyManagement>
         <dependencies>
