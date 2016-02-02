@@ -17,6 +17,8 @@ public class ModuleTwoIntegrationTest {
     @Test
     public void test2(){
         System.out.println("Running an integration test / 2!");
+        System.out.println("so i fixed the bug!");
+
     }
 
 }
