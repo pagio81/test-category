@@ -15,9 +15,9 @@ public class MyBeanRepositoryImpl implements MyBeanRepository{
     }
 
     public MyBean save(MyBean bean) {
-        if(bean.getUsername()==null) {
+        if(bean.getUsername()==null) 
             throw new MalformedBeanException("Username can't be null");
-        }
+        
         bean.setId(UUID.randomUUID().toString());
         return bean;
     }
