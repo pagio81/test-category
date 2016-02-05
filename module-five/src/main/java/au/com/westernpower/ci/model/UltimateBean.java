@@ -6,6 +6,7 @@ package au.com.westernpower.ci.model;
 public class UltimateBean {
 
     private Bean4 bean4;
+    private MyTBean tBean;
 
     public Bean4 getBean4() {
         return bean4;
@@ -13,5 +14,13 @@ public class UltimateBean {
 
     public void setBean4(Bean4 bean4) {
         this.bean4 = bean4;
+    }
+
+    public MyTBean gettBean() {
+        return tBean;
+    }
+
+    public void settBean(MyTBean tBean) {
+        this.tBean = tBean;
     }
 }
