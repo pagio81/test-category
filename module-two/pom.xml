@@ -26,6 +26,11 @@
             <artifactId>module-one</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>au.com.westernpower</groupId>
+            <artifactId>module-five</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
     </dependencies>
 
 

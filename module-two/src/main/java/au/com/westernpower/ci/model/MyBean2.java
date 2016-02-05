@@ -8,6 +8,7 @@ public class MyBean2 {
     private String id;
     private String username;
     private String password;
+    private AnotherBean anotherBean;
 
     public String getId() {
         return id;
@@ -31,5 +32,13 @@ public class MyBean2 {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public AnotherBean getAnotherBean() {
+        return anotherBean;
+    }
+
+    public void setAnotherBean(AnotherBean anotherBean) {
+        this.anotherBean = anotherBean;
     }
 }
