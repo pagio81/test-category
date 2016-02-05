@@ -1,6 +1,7 @@
 package au.com.westernpower.ci.repository;
 
 import au.com.westernpower.ci.model.MyBean;
+import au.com.westernpower.ci.model.MyTBean;
 import au.com.westernpower.ci.repository.exceptions.MalformedBeanException;
 
 import java.util.UUID;
@@ -10,8 +11,14 @@ import java.util.UUID;
  */
 public class MyBeanRepositoryImpl implements MyBeanRepository{
 
+    MyTBeanRepository repository = new MyTBeanRepositoryImpl();
+
     public MyBean getInstance() {
         return new MyBean();
+    }
+
+    public MyTBean getTInstance() {
+        return repository.getInstance();
     }
 
     public MyBean save(MyBean bean) {
