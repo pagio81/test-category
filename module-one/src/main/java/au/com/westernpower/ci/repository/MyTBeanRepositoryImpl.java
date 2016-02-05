@@ -1,6 +1,7 @@
 package au.com.westernpower.ci.repository;
 
 import au.com.westernpower.ci.model.MyTBean;
+import au.com.westernpower.ci.model.SuperBean;
 import au.com.westernpower.ci.repository.exceptions.MalformedTBeanException;
 
 import java.util.UUID;
@@ -24,5 +25,7 @@ public class MyTBeanRepositoryImpl implements MyTBeanRepository{
 
     public void delete(MyTBean tBean) {
         tBean.setId(null);
+
+        SuperBean superBean = new SuperBean();
     }
 }
