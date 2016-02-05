@@ -25,4 +25,10 @@ public class MyBeanRepositoryImpl implements MyBeanRepository{
     public void delete(MyBean bean) {
         bean.setId(null);
     }
+
+    protected void remove(MyBean bean) {
+        bean.setId(null);
+    }
+
+
 }
