@@ -8,7 +8,7 @@ public class SuperBean {
     private MyTBean bean;
     private MyBean2 bean2;
     private MyBean myBean;
-
+    private Bean4 bean4;
 
     public MyTBean getBean() {
         return bean;
@@ -33,4 +33,15 @@ public class SuperBean {
     public void setMyBean(MyBean myBean) {
         this.myBean = myBean;
     }
+
+    public Bean4 getBean4() {
+        return bean4;
+    }
+
+    public void setBean4(Bean4 bean4) {
+        this.bean4 = bean4;
+    }
 }
+
+
+

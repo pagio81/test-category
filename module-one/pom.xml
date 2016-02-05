@@ -21,5 +21,6 @@
             <version>${project.parent.version}</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 </project>

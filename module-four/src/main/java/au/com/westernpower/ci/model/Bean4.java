@@ -5,14 +5,22 @@ package au.com.westernpower.ci.model;
  */
 public class Bean4 {
 
-    SuperBean bean;
+    private String property;
+    private MyTBean myTBean;
 
-
-    public SuperBean getBean() {
-        return bean;
+    public String getProperty() {
+        return property;
     }
 
-    public void setBean(SuperBean bean) {
-        this.bean = bean;
+    public void setProperty(String property) {
+        this.property = property;
+    }
+
+    public MyTBean getMyTBean() {
+        return myTBean;
+    }
+
+    public void setMyTBean(MyTBean myTBean) {
+        this.myTBean = myTBean;
     }
 }

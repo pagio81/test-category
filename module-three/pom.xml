@@ -28,6 +28,11 @@
             <artifactId>module-two</artifactId>
             <version>${project.parent.version}</version>
         </dependency>
+        <dependency>
+            <groupId>au.com.westernpower</groupId>
+            <artifactId>module-four</artifactId>
+            <version>${project.parent.version}</version>
+        </dependency>
 
     </dependencies>
 
