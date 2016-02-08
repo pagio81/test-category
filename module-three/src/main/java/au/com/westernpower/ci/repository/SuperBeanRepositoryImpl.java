@@ -1,8 +1,6 @@
 package au.com.westernpower.ci.repository;
 
 import au.com.westernpower.ci.model.SuperBean;
-import au.com.westernpower.ci.service.MySuperService;
-import au.com.westernpower.ci.service.MySuperServiceImpl;
 
 import java.util.UUID;
 

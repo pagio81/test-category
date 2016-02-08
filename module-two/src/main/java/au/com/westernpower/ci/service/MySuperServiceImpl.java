@@ -18,16 +18,21 @@ public class MySuperServiceImpl implements MySuperService{
 
 
     public void saveInTransaction(MyBean bean, MyTBean tBean) {
+        //TODO: no we are not in a transaction...
 
         if(bean == null || tBean == null){
             throw new SaveException("Beans must not be null");
         }
 
-        //TODO: no we are not in a transaction...
-        MyTBean tBean2 = tBeanRepository.save(tBean);
-        MyBean bean2 = beanRepository.save(bean);
+        boolean result = true;
+        try {
+            MyTBean tBean2 = tBeanRepository.save(tBean);
+            MyBean bean2 = beanRepository.save(bean);
+            result = tBean2.getId() != null && bean2.getId() != null;
 
-        boolean result = tBean2.getId() != null && bean2.getId() != null;
+        } catch (Exception e){
+            result = false;
+        }
 
         if(!result){
             throw new SaveException("Operation didn't go as planned");

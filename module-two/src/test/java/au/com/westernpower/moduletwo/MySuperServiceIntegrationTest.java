@@ -1,5 +1,7 @@
 package au.com.westernpower.moduletwo;
 
+import au.com.westernpower.ci.model.MyBean;
+import au.com.westernpower.ci.model.MyTBean;
 import au.com.westernpower.ci.repository.exceptions.MalformedBeanException;
 import au.com.westernpower.ci.service.MySuperService;
 import au.com.westernpower.ci.service.MySuperServiceImpl;
@@ -24,5 +26,18 @@ public class MySuperServiceIntegrationTest {
         mySuperService.saveInTransaction(null,null);
 
     }
+
+
+    @Test
+    public void testSaveInTransaction2(){
+        thrown.expect(SaveException.class);
+
+        MyBean bean = new MyBean();
+        MyTBean tBean = new MyTBean();
+
+        mySuperService.saveInTransaction(bean,tBean);
+
+    }
+
 
 }
