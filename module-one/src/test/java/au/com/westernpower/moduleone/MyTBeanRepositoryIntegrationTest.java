@@ -3,27 +3,33 @@ package au.com.westernpower.moduleone;
 import au.com.westernpower.ci.model.MyTBean;
 import au.com.westernpower.ci.repository.MyTBeanRepository;
 import au.com.westernpower.ci.repository.MyTBeanRepositoryImpl;
+import au.com.westernpower.ci.repository.exceptions.MalformedTBeanException;
 import org.junit.Assert;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
+import org.junit.rules.ExpectedException;
 
 /**
  * Created by N038603 on 28/01/2016.
  */
 @Category(au.com.westernpower.ci.IntegrationTest.class)
-public class ModuleOneIntegrationTest {
+public class MyTBeanRepositoryIntegrationTest {
 
     MyTBeanRepository repository = new MyTBeanRepositoryImpl();
 
+    @Rule
+    public ExpectedException thrown= ExpectedException.none();
+
     @Test
-    public void test1(){
+    public void testGetInstance(){
         MyTBean myTBean = repository.getInstance();
 
         Assert.assertNotNull("My TBean should not be null",myTBean);
     }
 
     @Test
-    public void test2(){
+    public void testSaveNoException(){
         MyTBean myTBean = repository.getInstance();
         myTBean.setName("TBean");
         myTBean.setDescription("this is a bit of desc");
@@ -36,7 +42,16 @@ public class ModuleOneIntegrationTest {
     }
 
     @Test
-    public void test3() {
+    public void testSaveWithException(){
+        thrown.expect(MalformedTBeanException.class);
+
+        MyTBean myTBean = repository.getInstance();
+        myTBean = repository.save(myTBean);
+    }
+
+
+    @Test
+    public void testSaveDelete() {
         MyTBean myTBean = repository.getInstance();
         myTBean.setName("TBean");
         myTBean.setDescription("this is a bit of desc");

@@ -1,6 +1,5 @@
 package au.com.westernpower.ci.repository;
 
-import au.com.westernpower.ci.model.MyTBean;
 import au.com.westernpower.ci.model.SuperBean;
 
 /**
