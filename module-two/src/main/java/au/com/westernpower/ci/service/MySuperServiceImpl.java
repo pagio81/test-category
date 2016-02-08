@@ -30,12 +30,15 @@ public class MySuperServiceImpl implements MySuperService{
             MyBean bean2 = beanRepository.save(bean);
             result = tBean2.getId() != null && bean2.getId() != null;
 
-        } catch (Exception e){
+        }
+        catch (Exception e){
+            //in case of exception result is false,SaveException will be rethrown
             result = false;
         }
-
-        if(!result){
-            throw new SaveException("Operation didn't go as planned");
+        finally{
+            if(!result){
+                throw new SaveException("Operation didn't go as planned");
+            }
         }
     }
 }
