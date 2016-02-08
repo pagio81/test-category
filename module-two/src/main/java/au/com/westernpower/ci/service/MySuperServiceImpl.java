@@ -7,6 +7,8 @@ import au.com.westernpower.ci.repository.MyBeanRepositoryImpl;
 import au.com.westernpower.ci.repository.MyTBeanRepository;
 import au.com.westernpower.ci.repository.MyTBeanRepositoryImpl;
 import au.com.westernpower.ci.service.exceptios.SaveException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by N038603 on 5/02/2016.
@@ -15,7 +17,7 @@ public class MySuperServiceImpl implements MySuperService{
 
     MyTBeanRepository tBeanRepository = new MyTBeanRepositoryImpl();
     MyBeanRepository beanRepository = new MyBeanRepositoryImpl();
-
+    final Logger LOG = LoggerFactory.getLogger(MySuperServiceImpl.class);
 
     public void saveInTransaction(MyBean bean, MyTBean tBean) {
         //TODO: no we are not in a transaction...
@@ -34,11 +36,11 @@ public class MySuperServiceImpl implements MySuperService{
         catch (Exception e){
             //in case of exception result is false,SaveException will be rethrown
             result = false;
+            LOG.error("Error!",e);
         }
-        finally{
-            if(!result){
-                throw new SaveException("Operation didn't go as planned");
-            }
+
+        if(!result){
+            throw new SaveException("Operation didn't go as planned");
         }
     }
 }
