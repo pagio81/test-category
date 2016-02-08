@@ -43,6 +43,7 @@ public class MySuperServiceImpl implements MySuperService{
             catch (Exception ex){
                 LOG.error("Error rolling back!",ex);
             }
+            throw new SaveException("Beans must not be null");
         }
     }
 }
