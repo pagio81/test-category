@@ -22,6 +22,9 @@ public class MySuperBeanRepositoryImpl implements MySuperBeanRepository {
         MyTBean tBean = tBeanRepository.getInstance();
         MyBean bean = beanRepository.getInstance();
 
+        tBean.setName("DoSomething");
+        bean.setUsername("DoSomething");
+
         MyBean2 bean2 = new MyBean2();
 
         service.saveInTransaction(bean,tBean);
