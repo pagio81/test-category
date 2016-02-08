@@ -10,12 +10,12 @@ import org.junit.Test;
 /**
  * Created by N038603 on 28/01/2016.
  */
-public class ModuleTwoOtherUnitTest {
+public class MySuperServiceUnitTest {
 
     MySuperService service = new MySuperServiceImpl();
 
     @Test
-    public void test1(){
+    public void testSaveInTransaction(){
 
         MyBean bean = new MyBean();
         bean.setUsername("Test");
@@ -27,19 +27,10 @@ public class ModuleTwoOtherUnitTest {
 
         service.saveInTransaction(bean,tBean);
 
-        Assert.assertNotNull(bean.getId());
-        Assert.assertNotNull(tBean.getId());
-
-        System.out.println("Running a unit test / 1");
-    }
-
-    @Test
-    public void test2(){
-        System.out.println("Running a unit test / 2");
-        System.out.println("other bug fix!");
+        Assert.assertNotNull("Bean ID must not be null",bean.getId());
+        Assert.assertNotNull("T Bean ID must not be null",tBean.getId());
 
     }
-
 
 
 }
