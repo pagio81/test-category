@@ -16,11 +16,11 @@ public class UltimateBean {
         this.bean4 = bean4;
     }
 
-    public MyTBean gettBean() {
+    public MyTBean getTBean() {
         return tBean;
     }
 
-    public void settBean(MyTBean tBean) {
+    public void setTBean(MyTBean tBean) {
         this.tBean = tBean;
     }
 }
