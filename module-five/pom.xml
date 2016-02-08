@@ -24,6 +24,10 @@
             <scope>test</scope>
         </dependency>
         <dependency>
+            <groupId>javax.transaction</groupId>
+            <artifactId>jta</artifactId>
+        </dependency>
+        <dependency>
             <groupId>au.com.westernpower</groupId>
             <artifactId>module-four</artifactId>
             <version>${project.parent.version}</version>
