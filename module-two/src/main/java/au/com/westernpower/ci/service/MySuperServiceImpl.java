@@ -29,8 +29,8 @@ public class MySuperServiceImpl implements MySuperService{
         }
         try {
             transactionManager.begin();
-            MyTBean tBean2 = tBeanRepository.save(tBean);
-            MyBean bean2 = beanRepository.save(bean);
+            tBeanRepository.save(tBean);
+            beanRepository.save(bean);
             transactionManager.commit();
             return;
         }
