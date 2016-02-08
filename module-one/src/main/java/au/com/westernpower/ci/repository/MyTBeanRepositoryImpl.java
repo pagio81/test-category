@@ -10,10 +10,12 @@ import java.util.UUID;
  */
 public class MyTBeanRepositoryImpl implements MyTBeanRepository{
 
+    @Override
     public MyTBean getInstance() {
         return new MyTBean();
     }
 
+    @Override
     public MyTBean save(MyTBean tBean) {
         if(tBean.getName()==null){ 
             throw new MalformedTBeanException("Name can't be null");
@@ -22,6 +24,7 @@ public class MyTBeanRepositoryImpl implements MyTBeanRepository{
         return tBean;
     }
 
+    @Override
     public void delete(MyTBean tBean) {
         tBean.setId(null);
     }

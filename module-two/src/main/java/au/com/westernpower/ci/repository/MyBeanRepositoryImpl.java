@@ -13,14 +13,17 @@ public class MyBeanRepositoryImpl implements MyBeanRepository{
 
     MyTBeanRepository repository = new MyTBeanRepositoryImpl();
 
+    @Override
     public MyBean getInstance() {
         return new MyBean();
     }
 
+    @Override
     public MyTBean getTInstance() {
         return repository.getInstance();
     }
 
+    @Override
     public MyBean save(MyBean bean) {
         if(bean.getUsername()==null) 
             throw new MalformedBeanException("Username can't be null");
@@ -29,13 +32,9 @@ public class MyBeanRepositoryImpl implements MyBeanRepository{
         return bean;
     }
 
+    @Override
     public void delete(MyBean bean) {
         bean.setId(null);
     }
-
-    protected void remove(MyBean bean) {
-        bean.setId(null);
-    }
-
 
 }

@@ -16,6 +16,7 @@ public class MySuperBeanRepositoryImpl implements MySuperBeanRepository {
     private MyBeanRepository beanRepository = new MyBeanRepositoryImpl();
     private MySuperService service = new MySuperServiceImpl();
 
+    @Override
     public void doSomething(SuperBean superBean) {
 
         MyTBean tBean = tBeanRepository.getInstance();
