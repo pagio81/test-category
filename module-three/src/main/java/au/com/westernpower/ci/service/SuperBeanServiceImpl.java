@@ -9,7 +9,7 @@ import au.com.westernpower.ci.repository.*;
 /**
  * Created by N038603 on 8/02/2016.
  */
-public class MySuperBeanServiceImpl implements MySuperBeanService{
+public class SuperBeanServiceImpl implements SuperBeanService {
 
     private MyTBeanRepository tBeanRepository = new MyTBeanRepositoryImpl();
     private MyBeanRepository beanRepository = new MyBeanRepositoryImpl();
