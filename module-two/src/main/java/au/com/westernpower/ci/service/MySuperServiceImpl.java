@@ -24,10 +24,10 @@ public class MySuperServiceImpl implements MySuperService{
         }
 
         //TODO: no we are not in a transaction...
-        tBean = tBeanRepository.save(tBean);
-        bean = beanRepository.save(bean);
+        MyTBean tBean2 = tBeanRepository.save(tBean);
+        MyBean bean2 = beanRepository.save(bean);
 
-        boolean result = tBean.getId() != null && bean.getId() != null;
+        boolean result = tBean2.getId() != null && bean2.getId() != null;
 
         if(!result){
             throw new SaveException("Operation didn't go as planned");
