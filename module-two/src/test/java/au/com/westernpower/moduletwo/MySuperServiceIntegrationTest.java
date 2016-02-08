@@ -25,9 +25,4 @@ public class MySuperServiceIntegrationTest {
 
     }
 
-    @Test
-    public void test2(){
-
-    }
-
 }

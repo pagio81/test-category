@@ -1,20 +1,20 @@
-package au.com.westernpower.ci.repository;
+package au.com.westernpower.ci.service;
 
 import au.com.westernpower.ci.model.MyBean;
 import au.com.westernpower.ci.model.MyBean2;
 import au.com.westernpower.ci.model.MyTBean;
 import au.com.westernpower.ci.model.SuperBean;
-import au.com.westernpower.ci.service.MySuperService;
-import au.com.westernpower.ci.service.MySuperServiceImpl;
+import au.com.westernpower.ci.repository.*;
 
 /**
- * Created by N038603 on 5/02/2016.
+ * Created by N038603 on 8/02/2016.
  */
-public class MySuperBeanRepositoryImpl implements MySuperBeanRepository {
+public class MySuperBeanServiceImpl implements MySuperBeanService{
 
     private MyTBeanRepository tBeanRepository = new MyTBeanRepositoryImpl();
     private MyBeanRepository beanRepository = new MyBeanRepositoryImpl();
     private MySuperService service = new MySuperServiceImpl();
+    private SuperBeanRepository repository = new SuperBeanRepositoryImpl();
 
     @Override
     public void doSomething(SuperBean superBean) {
@@ -33,6 +33,6 @@ public class MySuperBeanRepositoryImpl implements MySuperBeanRepository {
         superBean.setBean2(bean2);
         superBean.setMyBean(bean);
 
-        //TODO: save
+        repository.save(superBean);
     }
 }

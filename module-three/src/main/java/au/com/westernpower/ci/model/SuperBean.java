@@ -5,10 +5,20 @@ package au.com.westernpower.ci.model;
  */
 public class SuperBean {
 
+    private String id;
+
     private MyTBean bean;
     private MyBean2 bean2;
     private MyBean myBean;
     private Bean4 bean4;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public MyTBean getBean() {
         return bean;

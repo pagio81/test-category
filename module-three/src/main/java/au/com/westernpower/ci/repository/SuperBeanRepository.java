@@ -5,7 +5,8 @@ import au.com.westernpower.ci.model.SuperBean;
 /**
  * Created by N038603 on 5/02/2016.
  */
-public interface MySuperBeanRepository {
+public interface SuperBeanRepository {
 
-    void doSomething(SuperBean superBean);
+    SuperBean save(SuperBean superBean);
+
 }

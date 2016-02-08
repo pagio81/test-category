@@ -1,8 +1,8 @@
 package au.com.westernpower.ci;
 
 import au.com.westernpower.ci.model.SuperBean;
-import au.com.westernpower.ci.repository.MySuperBeanRepository;
-import au.com.westernpower.ci.repository.MySuperBeanRepositoryImpl;
+import au.com.westernpower.ci.repository.SuperBeanRepository;
+import au.com.westernpower.ci.repository.SuperBeanRepositoryImpl;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,14 +12,14 @@ import org.junit.Test;
 
 public class MySuperRepositoryTest {
 
-    MySuperBeanRepository repository = new MySuperBeanRepositoryImpl();
+    SuperBeanRepository repository = new SuperBeanRepositoryImpl();
 
     @Test
-    public void testDoSomething(){
+    public void testSave(){
         SuperBean superBean = new SuperBean();
-        repository.doSomething(superBean);
+        repository.save(superBean);
 
-        Assert.assertNotNull("Bean must not be null",superBean.getBean());
+        Assert.assertNotNull("Bean ID must not be null",superBean.getId());
     }
 
 }
