@@ -15,9 +15,9 @@ import org.slf4j.LoggerFactory;
  */
 public class MySuperServiceImpl implements MySuperService{
 
-    MyTBeanRepository tBeanRepository = new MyTBeanRepositoryImpl();
-    MyBeanRepository beanRepository = new MyBeanRepositoryImpl();
-    final Logger LOG = LoggerFactory.getLogger(MySuperServiceImpl.class);
+    private MyTBeanRepository tBeanRepository = new MyTBeanRepositoryImpl();
+    private MyBeanRepository beanRepository = new MyBeanRepositoryImpl();
+    private static final Logger LOG = LoggerFactory.getLogger(MySuperServiceImpl.class);
 
     public void saveInTransaction(MyBean bean, MyTBean tBean) {
         //TODO: no we are not in a transaction...
