@@ -13,9 +13,17 @@
         <module>module-four</module>
         <module>module-five</module>
     </modules>
+    <developers>
+        <developer>
+            <id>pagio81</id>
+            <email>francesco.pagetti@gmail.com</email>
+            <name>Francesco Pagetti</name>
+        </developer>
+    </developers>
+
     <scm>
-	<connection>scm:git:git@github.com:pagio81/test-category.git</connection> 
-	<developerConnection>scm:git:git@github.com:pagio81/test-category.git</developerConnection>
+	    <connection>scm:git:git@github.com:pagio81/test-category.git</connection>
+	    <developerConnection>scm:git:git@github.com:pagio81/test-category.git</developerConnection>
     </scm>
 
    <distributionManagement>

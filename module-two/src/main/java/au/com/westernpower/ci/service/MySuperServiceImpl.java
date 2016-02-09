@@ -23,6 +23,7 @@ public class MySuperServiceImpl implements MySuperService{
     private static final Logger LOG = LoggerFactory.getLogger(MySuperServiceImpl.class);
     private TransactionManager transactionManager = new CustomTransactionManagerImpl();
 
+    @Override
     public void saveInTransaction(MyBean bean, MyTBean tBean) {
         if(bean == null || tBean == null){
             throw new SaveException("Beans must not be null");
