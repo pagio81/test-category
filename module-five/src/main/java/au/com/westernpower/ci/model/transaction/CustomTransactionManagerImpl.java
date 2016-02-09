@@ -1,5 +1,8 @@
 package au.com.westernpower.ci.model.transaction;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.transaction.*;
 import javax.transaction.xa.XAResource;
 
@@ -8,8 +11,9 @@ import javax.transaction.xa.XAResource;
  */
 public class CustomTransactionManagerImpl implements TransactionManager{
 
-    Transaction current;
-    int timeout;
+    static final Logger LOG = LoggerFactory.getLogger(CustomTransactionManagerImpl.class);
+    private Transaction current;
+    private int timeout;
 
     public void begin() throws NotSupportedException, SystemException {
         if(current == null){
@@ -32,6 +36,7 @@ public class CustomTransactionManagerImpl implements TransactionManager{
 
     public void resume(Transaction transaction) throws InvalidTransactionException, IllegalStateException, SystemException {
         //resume
+        LOG.info("Resuming transaction");
     }
 
     public void rollback() throws IllegalStateException, SecurityException, SystemException {
@@ -49,6 +54,7 @@ public class CustomTransactionManagerImpl implements TransactionManager{
 
     public Transaction suspend() throws SystemException {
         //suspending
+        LOG.info("Suspending transaction");
         return current;
     }
 }
