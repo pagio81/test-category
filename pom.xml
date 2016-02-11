@@ -7,11 +7,10 @@
     <version>2.9-SNAPSHOT</version>
     <modules>
         <module>module-test</module>
-        <module>module-one</module>
-        <module>module-two</module>
-        <module>module-three</module>
-        <module>module-four</module>
-        <module>module-five</module>
+        <module>module-model</module>
+        <module>module-repository</module>
+        <module>module-service</module>
+        <module>module-web</module>
     </modules>
     <developers>
         <developer>
@@ -65,6 +64,13 @@
                 <version>3.8</version>
                 <scope>test</scope>
             </dependency>
+            <dependency>
+                <groupId>org.jboss.spec</groupId>
+                <artifactId>jboss-javaee-7.0</artifactId>
+                <version>1.0.3.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
         </dependencies>
    </dependencyManagement>
 
@@ -86,7 +92,11 @@
                     <artifactId>maven-source-plugin</artifactId>
                     <version>2.4</version>
                 </plugin>
-
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>2.6</version>
+                </plugin>
             </plugins>
         </pluginManagement>
    </build>
