@@ -26,7 +26,10 @@ public class CustomTransactionManagerImpl implements TransactionManager{
     }
 
     public int getStatus() throws SystemException {
-        return 0;
+        if(current == null){
+            throw  new SystemException("There is not transaction!");
+        }
+        return current.getStatus();
     }
 
     public Transaction getTransaction() throws SystemException {

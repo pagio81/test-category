@@ -14,8 +14,8 @@ import org.junit.rules.ExpectedException;
 /**
  * Created by N038603 on 28/01/2016.
  */
-@Category(au.com.westernpower.ci.IntegrationTest.class)
-public class MySuperServiceIntegrationTest {
+
+public class MySuperServiceTest {
 
     @Rule
     public ExpectedException thrown= ExpectedException.none();
