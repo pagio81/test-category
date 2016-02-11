@@ -1,4 +1,4 @@
-package au.com.westernpower.ci.model;
+package au.com.westernpower.ci.web;
 
 /**
  * Created by N038603 on 3/02/2016.

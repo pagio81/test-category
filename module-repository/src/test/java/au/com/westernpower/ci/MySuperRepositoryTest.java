@@ -1,6 +1,6 @@
 package au.com.westernpower.ci;
 
-import au.com.westernpower.ci.model.SuperBean;
+import au.com.westernpower.ci.web.SuperBean;
 import au.com.westernpower.ci.repository.SuperBeanRepository;
 import au.com.westernpower.ci.repository.SuperBeanRepositoryImpl;
 import org.junit.Assert;

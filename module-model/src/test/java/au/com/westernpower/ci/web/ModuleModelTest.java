@@ -1,4 +1,4 @@
-package au.com.westernpower.ci.model;
+package au.com.westernpower.ci.web;
 
 import org.junit.Assert;
 import org.junit.Test;

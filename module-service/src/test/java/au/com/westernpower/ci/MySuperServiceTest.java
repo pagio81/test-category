@@ -1,14 +1,13 @@
 package au.com.westernpower.ci;
 
-import au.com.westernpower.ci.model.MyBean;
-import au.com.westernpower.ci.model.MyTBean;
+import au.com.westernpower.ci.web.MyBean;
+import au.com.westernpower.ci.web.MyTBean;
 import au.com.westernpower.ci.service.MySuperService;
 import au.com.westernpower.ci.service.MySuperServiceImpl;
 import au.com.westernpower.ci.service.exceptios.SaveException;
 import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.experimental.categories.Category;
 import org.junit.rules.ExpectedException;
 
 /**
