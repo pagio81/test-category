@@ -18,8 +18,8 @@ import java.io.PrintWriter;
 @WebServlet("/HelloWorld")
 public class HelloWorldServlet extends HttpServlet {
 
-    static String PAGE_HEADER = "<html><head><title>Hello World!</title></head><body>";
-    static String PAGE_FOOTER = "</body></html>";
+    private static final String PAGE_HEADER = "<html><head><title>Hello World!</title></head><body>";
+    private static final String PAGE_FOOTER = "</body></html>";
 
     SuperBeanService service = new SuperBeanServiceImpl();
 
