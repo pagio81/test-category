@@ -1,6 +1,6 @@
 package au.com.westernpower.ci.repository;
 
-import au.com.westernpower.ci.web.MyTBean;
+import au.com.westernpower.ci.model.MyTBean;
 
 /**
  * Created by N038603 on 5/02/2016.

@@ -146,25 +146,6 @@
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
                     </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-antrun-plugin</artifactId>
-                        <version>1.1</version>
-                        <executions>
-                            <execution>
-                                <phase>validate</phase>
-                                <goals>
-                                    <goal>run</goal>
-                                </goals>
-                                <configuration>
-                                    <tasks>
-                                        <echo>Displaying value of 'jacoco.agent.arg'</echo>
-                                        <echo>[jacoco.agent.arg] ${jacoco.agent.arg}</echo>
-                                    </tasks>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
                 </plugins>
             </build>
 

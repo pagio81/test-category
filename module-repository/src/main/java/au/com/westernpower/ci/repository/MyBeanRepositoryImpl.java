@@ -1,7 +1,7 @@
 package au.com.westernpower.ci.repository;
 
-import au.com.westernpower.ci.web.MyBean;
-import au.com.westernpower.ci.web.MyTBean;
+import au.com.westernpower.ci.model.MyBean;
+import au.com.westernpower.ci.model.MyTBean;
 import au.com.westernpower.ci.repository.exceptions.MalformedBeanException;
 
 import java.util.UUID;

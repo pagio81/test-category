@@ -1,6 +1,6 @@
 package au.com.westernpower.ci;
 
-import au.com.westernpower.ci.web.MyBean;
+import au.com.westernpower.ci.model.MyBean;
 import au.com.westernpower.ci.repository.MyBeanRepository;
 import au.com.westernpower.ci.repository.MyBeanRepositoryImpl;
 import au.com.westernpower.ci.repository.exceptions.MalformedBeanException;

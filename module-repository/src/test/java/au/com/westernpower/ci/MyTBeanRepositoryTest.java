@@ -1,6 +1,6 @@
 package au.com.westernpower.ci;
 
-import au.com.westernpower.ci.web.MyTBean;
+import au.com.westernpower.ci.model.MyTBean;
 import au.com.westernpower.ci.repository.MyTBeanRepository;
 import au.com.westernpower.ci.repository.MyTBeanRepositoryImpl;
 import au.com.westernpower.ci.repository.exceptions.MalformedTBeanException;

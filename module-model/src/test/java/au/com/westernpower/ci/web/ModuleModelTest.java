@@ -1,5 +1,6 @@
 package au.com.westernpower.ci.web;
 
+import au.com.westernpower.ci.model.*;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,5 +1,6 @@
 package au.com.westernpower.ci.web;
 
+import au.com.westernpower.ci.model.SuperBean;
 import au.com.westernpower.ci.service.SuperBeanService;
 import au.com.westernpower.ci.service.SuperBeanServiceImpl;
 
