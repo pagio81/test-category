@@ -141,35 +141,33 @@
         </profile>
         <profile>
             <id>integration_tests</id>
-            <properties>
-                <cargo.container.id>wildfly8x</cargo.container.id>
-                <cargo.container.debug.port>8787</cargo.container.debug.port>
-                <cargo.hostname>192.168.56.1</cargo.hostname>
-            </properties>
             <build>
                 <plugins>
-                    <plugin>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <configuration>
-                            <excludedGroups>
-                                au.com.westernpower.ci.FunctionalTest
-                            </excludedGroups>
-			                <property>
-                  		        <name>listener</name>
-                  		        <value>org.sonar.java.jacoco.JUnitListener</value>
-		                    </property>
-                        </configuration>
-                    </plugin>
                     <plugin>
                         <artifactId>maven-failsafe-plugin</artifactId>
                     </plugin>
                     <plugin>
-                        <groupId>org.codehaus.cargo</groupId>
-                        <artifactId>cargo-maven2-plugin</artifactId>
-                        <version>1.3.3</version>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.1</version>
+                        <executions>
+                            <execution>
+                                <phase>validate</phase>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                                <configuration>
+                                    <tasks>
+                                        <echo>Displaying value of 'jacoco.agent.arg'</echo>
+                                        <echo>[jacoco.agent.arg] ${jacoco.agent.arg}</echo>
+                                    </tasks>
+                                </configuration>
+                            </execution>
+                        </executions>
                     </plugin>
                 </plugins>
             </build>
+
         </profile>
    </profiles>
 </project>
