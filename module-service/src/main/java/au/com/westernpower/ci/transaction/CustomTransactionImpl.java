@@ -11,12 +11,24 @@ import javax.transaction.xa.XAResource;
  */
 public class CustomTransactionImpl implements Transaction {
 
+    public enum Status {
+        READY(0), COMMITTED(1), ROLLED_BACK(2), TIMED_OUT(3), SYS_ERROR(4);
+
+        private int value = 0;
+        Status(int value){
+            this.value = value;
+        }
+
+        public int value(){
+            return value;
+        }
+    }
+
     private static final Logger LOG = LoggerFactory.getLogger(CustomTransactionImpl.class);
     private boolean rollbackOnly = false;
     private Synchronization synchronization;
     //successful
-    private int status = 0;
-    private boolean systemError;
+    private int status = Status.READY.value();
 
     @Override
     public void commit() throws RollbackException, HeuristicMixedException, HeuristicRollbackException, SecurityException, SystemException {
@@ -26,13 +38,15 @@ public class CustomTransactionImpl implements Transaction {
         }
         if(rollbackOnly){
             LOG.info("Rollback only, not committing here");
+            status = Status.ROLLED_BACK.value();
         } else {
             //commit here
+
+            status = Status.COMMITTED.value();
         }
         if(synchronization != null){
             synchronization.afterCompletion(getStatus());
         }
-
         synchronization = null;
     }
 
@@ -50,9 +64,7 @@ public class CustomTransactionImpl implements Transaction {
 
     @Override
     public int getStatus() throws SystemException {
-        if(systemError){
-            throw new SystemException("Transaction in system error");
-        }
+        checkStatus();
         return status;
     }
 
@@ -70,6 +82,7 @@ public class CustomTransactionImpl implements Transaction {
         }
 
         //rollback here
+        status = Status.ROLLED_BACK.value();
 
         if(synchronization != null){
             synchronization.afterCompletion(getStatus());
@@ -84,11 +97,9 @@ public class CustomTransactionImpl implements Transaction {
     }
 
     private void checkStatus()  throws SystemException{
-        if(systemError){
+        //Not allowed
+        if(status > 4){
             throw new SystemException("Transaction in system error");
-        }
-        else if(getStatus()!=0){
-            throw new IllegalStateException("Transaction in status:"+getStatus());
         }
     }
 
