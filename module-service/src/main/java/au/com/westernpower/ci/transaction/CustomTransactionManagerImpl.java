@@ -14,17 +14,20 @@ public class CustomTransactionManagerImpl implements TransactionManager{
     private Transaction current;
     private int timeout;
 
+    @Override
     public void begin() throws NotSupportedException, SystemException {
         if(current == null){
             current = getTransaction();
         }
     }
 
-    public void commit() throws RollbackException, HeuristicMixedException, HeuristicRollbackException, SecurityException, IllegalStateException, SystemException {
+    @Override
+    public void commit() throws RollbackException, HeuristicMixedException, HeuristicRollbackException, SecurityException, SystemException {
         current.commit();
         current = null;
     }
 
+    @Override
     public int getStatus() throws SystemException {
         if(current == null){
             return 0;
@@ -32,28 +35,34 @@ public class CustomTransactionManagerImpl implements TransactionManager{
         return current.getStatus();
     }
 
+    @Override
     public Transaction getTransaction() throws SystemException {
         return new CustomTransactionImpl();
     }
 
-    public void resume(Transaction transaction) throws InvalidTransactionException, IllegalStateException, SystemException {
+    @Override
+    public void resume(Transaction transaction) throws InvalidTransactionException, SystemException {
         //resume
         LOG.info("Resuming transaction");
     }
 
-    public void rollback() throws IllegalStateException, SecurityException, SystemException {
+    @Override
+    public void rollback() throws SecurityException, SystemException {
         current.rollback();
         current = null;
     }
 
-    public void setRollbackOnly() throws IllegalStateException, SystemException {
+    @Override
+    public void setRollbackOnly() throws SystemException {
         current.setRollbackOnly();
     }
 
+    @Override
     public void setTransactionTimeout(int i) throws SystemException {
         timeout = i;
     }
 
+    @Override
     public Transaction suspend() throws SystemException {
         //suspending
         LOG.info("Suspending transaction");

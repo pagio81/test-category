@@ -18,7 +18,7 @@ public class CustomTransactionImpl implements Transaction {
     private int status = 0;
     private boolean systemError;
 
-    public void commit() throws RollbackException, HeuristicMixedException, HeuristicRollbackException, SecurityException, IllegalStateException, SystemException {
+    public void commit() throws RollbackException, HeuristicMixedException, HeuristicRollbackException, SecurityException, SystemException {
         checkStatus();
         if(synchronization != null){
             synchronization.beforeCompletion();
@@ -35,12 +35,12 @@ public class CustomTransactionImpl implements Transaction {
         synchronization = null;
     }
 
-    public boolean delistResource(XAResource xaResource, int i) throws IllegalStateException, SystemException {
+    public boolean delistResource(XAResource xaResource, int i) throws SystemException {
         checkStatus();
         return false;
     }
 
-    public boolean enlistResource(XAResource xaResource) throws RollbackException, IllegalStateException, SystemException {
+    public boolean enlistResource(XAResource xaResource) throws RollbackException,  SystemException {
         checkStatus();
         return false;
     }
@@ -52,12 +52,12 @@ public class CustomTransactionImpl implements Transaction {
         return status;
     }
 
-    public void registerSynchronization(Synchronization synchronization) throws RollbackException, IllegalStateException, SystemException {
+    public void registerSynchronization(Synchronization synchronization) throws RollbackException, SystemException {
         //registering sync
         this.synchronization = synchronization;
     }
 
-    public void rollback() throws IllegalStateException, SystemException {
+    public void rollback() throws  SystemException {
         checkStatus();
         if(synchronization != null){
             synchronization.beforeCompletion();
@@ -71,12 +71,12 @@ public class CustomTransactionImpl implements Transaction {
         synchronization = null;
     }
 
-    public void setRollbackOnly() throws IllegalStateException, SystemException {
+    public void setRollbackOnly() throws SystemException {
         checkStatus();
         rollbackOnly = true;
     }
 
-    private void checkStatus()  throws IllegalStateException, SystemException{
+    private void checkStatus()  throws SystemException{
         if(systemError){
             throw new SystemException("Transaction in system error");
         }
