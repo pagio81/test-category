@@ -18,6 +18,7 @@ public class CustomTransactionImpl implements Transaction {
     private int status = 0;
     private boolean systemError;
 
+    @Override
     public void commit() throws RollbackException, HeuristicMixedException, HeuristicRollbackException, SecurityException, SystemException {
         checkStatus();
         if(synchronization != null){
@@ -35,16 +36,19 @@ public class CustomTransactionImpl implements Transaction {
         synchronization = null;
     }
 
+    @Override
     public boolean delistResource(XAResource xaResource, int i) throws SystemException {
         checkStatus();
         return false;
     }
 
+    @Override
     public boolean enlistResource(XAResource xaResource) throws RollbackException,  SystemException {
         checkStatus();
         return false;
     }
 
+    @Override
     public int getStatus() throws SystemException {
         if(systemError){
             throw new SystemException("Transaction in system error");
@@ -52,11 +56,13 @@ public class CustomTransactionImpl implements Transaction {
         return status;
     }
 
+    @Override
     public void registerSynchronization(Synchronization synchronization) throws RollbackException, SystemException {
         //registering sync
         this.synchronization = synchronization;
     }
 
+    @Override
     public void rollback() throws  SystemException {
         checkStatus();
         if(synchronization != null){
@@ -71,6 +77,7 @@ public class CustomTransactionImpl implements Transaction {
         synchronization = null;
     }
 
+    @Override
     public void setRollbackOnly() throws SystemException {
         checkStatus();
         rollbackOnly = true;
