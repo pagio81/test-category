@@ -16,15 +16,12 @@ public class CustomTransactionManagerImpl implements TransactionManager{
 
     @Override
     public void begin() throws NotSupportedException, SystemException {
-        if(current == null){
-            current = getTransaction();
-        }
+    	current = getTransaction();
     }
 
     @Override
     public void commit() throws RollbackException, HeuristicMixedException, HeuristicRollbackException, SecurityException, SystemException {
         current.commit();
-        current = null;
     }
 
     @Override
@@ -52,7 +49,6 @@ public class CustomTransactionManagerImpl implements TransactionManager{
     @Override
     public void rollback() throws SecurityException, SystemException {
         current.rollback();
-        current = null;
     }
 
     @Override
