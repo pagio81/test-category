@@ -144,7 +144,7 @@
             <build>
                 <plugins>
                     <plugin>
-                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <artifactId>maven-surefire-plugin</artifactId>
                     </plugin>
                 </plugins>
             </build>
