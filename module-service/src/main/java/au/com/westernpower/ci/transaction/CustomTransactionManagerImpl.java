@@ -37,6 +37,9 @@ public class CustomTransactionManagerImpl implements TransactionManager{
 
     @Override
     public Transaction getTransaction() throws SystemException {
+        if(current != null){
+            return current;
+        }
         return new CustomTransactionImpl();
     }
 
