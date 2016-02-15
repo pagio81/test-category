@@ -7,6 +7,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.HttpConstraint;
+import javax.servlet.annotation.ServletSecurity;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +21,8 @@ import java.io.PrintWriter;
  */
 @SuppressWarnings("serial")
 @WebServlet("/HelloWorld")
+//@ServletSecurity(@HttpConstraint(rolesAllowed = { "Hudson-admin" }))
+@ServletSecurity(@HttpConstraint(rolesAllowed = {"Hudson-admin"}))
 public class HelloWorldServlet extends HttpServlet {
 
     private static final String PAGE_HEADER = "<html><head><title>Hello World!</title></head><body>";
