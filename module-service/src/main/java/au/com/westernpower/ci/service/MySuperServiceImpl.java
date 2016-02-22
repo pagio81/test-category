@@ -29,6 +29,8 @@ public class MySuperServiceImpl implements MySuperService{
             throw new SaveException("Beans must not be null");
         }
         try {
+            LOG.info("Saving beans");
+
             transactionManager.begin();
             tBeanRepository.save(tBean);
             beanRepository.save(bean);
