@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.Principal;
 
 /**
  * Created by N038603 on 11/02/2016.
@@ -39,10 +40,14 @@ public class HelloWorldServlet extends HttpServlet {
             PrintWriter writer = resp.getWriter();
             writer.println(PAGE_HEADER);
 
+            Principal principal = req.getUserPrincipal();
+            
+
             SuperBean bean = new SuperBean();
             service.doSomething(bean);
 
             writer.println("<h1>Super Bean saved: " + bean.getId() + "</h1>");
+            writer.println("<h2>User: " + principal.getName() + "</h2>");
 
             writer.println(PAGE_FOOTER);
             writer.close();
